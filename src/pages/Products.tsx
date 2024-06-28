@@ -5,7 +5,11 @@ import ProductDetails from '../components/ProductDetails';
 
 export const loader = async () => {
   const products = await getProducts();
-  return products;
+  if (products) {
+    return products;
+  }
+
+  return {};
 };
 
 export const action = async ({ request }: ActionFunctionArgs) => {
